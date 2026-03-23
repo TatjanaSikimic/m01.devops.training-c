@@ -14,6 +14,10 @@ blocks:
             - make app
             - echo hello
             - artifact push workflow app
+      agent:
+        machine:
+          type: e1-standard-2
+          os_image: ubuntu2404
   - name: Tests
     task:
       prologue:
@@ -33,3 +37,7 @@ blocks:
         - name: Unit tests
           commands:
             - make test
+      agent:
+        machine:
+          type: e1-standard-2
+          os_image: ubuntu2404
